@@ -1,0 +1,13 @@
+package dynamicparse;
+
+message SelfDescribingMessage
+{
+	//set of proto files which define the type
+	required FileDescriptorSet proto_file = 1;
+	
+	//name of the message type,must be defined by one of the files in proto_files.
+	required string type_name = 2;
+	
+	//the message data
+	required bytes message_data = 3;
+}
